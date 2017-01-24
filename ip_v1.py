@@ -13,7 +13,7 @@
 import os, sys, glob, psycopg2
 
 # connect to postgres 
-conn = psycopg2.connect("dbname=logs user=postgres password=postgres")
+conn = psycopg2.connect("dbname=logs user=postgres password=$$$$$$")
 
 #################################################################
 ### loop all the logs file with the Windows Server
