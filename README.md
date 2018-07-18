@@ -5,5 +5,5 @@ outside the Harvard Domain. CS(Referrer) - https://msdn.microsoft.com/en-us/libr
 the site that the user last visited. This site provided a link to the current site. 
 Geocoding the IP address of the client that made the request using (http://freegeoip.net/)
 
-2. (crawl.py) Python script to crawl a folders, identify all tif files and if there is an equivalent pdf file, if not
-create a pdf file. The script use the img2pdf lib (https://github.com/josch/img2pdf)
+2. (crawl.py) Python script to crawl the PIRC Vault folders, identify all tif files and the corrispondent pdf file. If a corrispondet 
+PDF file does not exist then a new one will be created. The script use the img2pdf lib (https://github.com/josch/img2pdf)
