@@ -57,7 +57,7 @@ def crawlFolders(rootpath):
                 for item in vlist_final:
                     print ("File: " + str(item) + ".tif\n")
                     createLOG("File: " + str(item) + ".pdf\n")
-                    #makePDF(dirpath, item, dirpath + "/" + item + ".tif")
+                    makePDF(dirpath, item, dirpath + "/" + item + ".tif")
                 
         else:
             vlist = filenames           
@@ -85,7 +85,7 @@ def crawlFolders(rootpath):
                 for item in vlist_final:
                     print ("Name: " + str(item) + ".tif\n")
                     createLOG("File name: " + str(item) + ".pdf\n")
-                    #makePDF(dirpath, item, dirpath + "/" + item + ".tif")
+                    makePDF(dirpath, item, dirpath + "/" + item + ".tif")
             
 if __name__ == '__main__':
     filetime = time.strftime("%Y%m%d")
