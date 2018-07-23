@@ -10,9 +10,13 @@ __status__ = "Production"
 
 
 """
-import sys, os, time, collections
-
+import sys, os, time, collections, argparse
 from win32com.client.dynamic import Dispatch
+
+parser = argparse.ArgumentParser(description='Add an input path')
+parser.add_argument('-d',help='directory to use',action='store')
+
+args = parser.parse_args()
 
 # create log file
 def createLOG(info):    
@@ -90,5 +94,5 @@ def crawlFolders(rootpath):
 if __name__ == '__main__':
     filetime = time.strftime("%Y%m%d")
     f = open('vaultlog_' + filetime + '.txt','w')    
-    crawlFolders(r"C:\Temp\txt")
+    crawlFolders(args.d)
     f.close()
