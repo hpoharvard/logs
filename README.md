@@ -8,7 +8,7 @@ Geocoding the IP address of the client that made the request using (http://freeg
 2. (crawl.py) Python script to crawl the PIRC Vault folders, identify all tif files and the corrispondent pdf file. If a corrispondet 
 PDF file does not exist then a new one will be created. The script uses the img2pdf lib (https://github.com/josch/img2pdf)
 
-3. (crawl_wand) Python script to crawl the PIRC Vault folders, identify all tif files and the corrispondent pdf file. If a corrispondet 
+3. (crawl_wand.py) Python script to crawl the PIRC Vault folders, identify all tif files and the corrispondent pdf file. If a corrispondet 
 PDF file does not exist then a new one will be created. The script uses the imagemagick (https://www.imagemagick.org/script/index.php) 
 and wand lib (http://docs.wand-py.org/en/0.4.1/guide/write.html)
 
