@@ -14,7 +14,10 @@ import sys, os, time, collections, argparse
 from win32com.client.dynamic import Dispatch
 
 parser = argparse.ArgumentParser(description='Add an input path')
-parser.add_argument('-d',help='directory to use',action='store')
+# add -d argument to specify the directory to crwal
+parser.add_argument('-d',help='Directory to use',action='store')
+# add -f argument to input the name of the file
+parser.add_argument('-f',help='Name of the output file',action='store')
 
 args = parser.parse_args()
 
@@ -93,6 +96,6 @@ def crawlFolders(rootpath):
             
 if __name__ == '__main__':
     filetime = time.strftime("%Y%m%d")
-    f = open('vaultlog_' + filetime + '.txt','w')    
+    f = open(args.f + "_" + filetime + '.txt','w')    
     crawlFolders(args.d)
     f.close()
