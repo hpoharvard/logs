@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description='Add an input path')
 # add -d argument to specify the directory to crwal
 parser.add_argument('-d', help='Directory to use',action='store')
 # add -f argument to input the name of the file
-parser.add_argument('-f', ahelp='Name of the output file',action='store')
+parser.add_argument('-f', help='Name of the output file',action='store')
 
 args = parser.parse_args()
 
@@ -56,17 +56,17 @@ def stripExt(vlist_new, vlist, dirpath):
     vlist_final = []
     for item in vlist_new:
         for vitem in vlist:
-            if item == vitem.rsplit('.',1)[0] and (vitem.rsplit('.',1)[1] == 'tif' or vitem.rsplit('.',1)[1] == 'TIF'):        
+            if item == vitem.rsplit('.',1)[0] and (vitem.rsplit('.',1)[1] == 'tif' or vitem.rsplit('.',1)[1] == 'TIF' or vitem.rsplit('.',1)[1] == 'TIFF'):        
                 vlist_final.append(item)    
     vlist_final.sort()
     
     if len(vlist_final) == 0:
         print ("All set at: " + dirpath)                
     else:
-        print ("Created pdfs @: " + dirpath + "\n")                
+        print ("Created pdfs @: " + dirpath  + "\\" + "\n")                
         for item in vlist_final:
-            print (item + ","+ dirpath)
-            createLOG(item + ","+ dirpath + "\n")
+            print (item + ","+ dirpath + "\\")
+            createLOG(item + ","+ dirpath + "\\" + "\n")
             makePDF(dirpath, item)
 
 # crawl folders
@@ -76,11 +76,11 @@ def crawlFolders(rootpath):
         if len(filenames) > 1:
             vlist = filenames           
             # create a list of files with pdf, tif, or TIF extensions only 
-            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF', vlist))                        
+            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF' or x.split('.')[-1] == 'TIFF', vlist))                        
             uniqueFiles(vlist, dirpath)               
         else:
             vlist = filenames           
-            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF', vlist))                        
+            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF' or x.split('.')[-1] == 'TIFF', vlist))                        
             uniqueFiles(vlist, dirpath)            
 
 if __name__ == '__main__':
