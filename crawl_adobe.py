@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description='Add an input path')
 # add -d argument to specify the directory to crwal
 parser.add_argument('-d', help='Directory to use',action='store')
 # add -f argument to input the name of the file
-parser.add_argument('-f', help='Name of the output file',action='store')
+parser.add_argument('-f', ahelp='Name of the output file',action='store')
 
 args = parser.parse_args()
 
