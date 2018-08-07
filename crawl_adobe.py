@@ -13,9 +13,9 @@ from win32com.client.dynamic import Dispatch
 
 parser = argparse.ArgumentParser(description='Add an input path')
 # add -d argument to specify the directory to crwal
-parser.add_argument('-d',help='Directory to use',action='store')
+parser.add_argument('-d', help='Directory to use',action='store')
 # add -f argument to input the name of the file
-parser.add_argument('-f',help='Name of the output file',action='store')
+parser.add_argument('-f', help='Name of the output file',action='store')
 
 args = parser.parse_args()
 
@@ -86,7 +86,7 @@ def crawlFolders(rootpath):
 if __name__ == '__main__':
     filetime = time.strftime("%Y%m%d")
     f = open(args.f + "_" + filetime + '.csv','wb')
-    e = open("errors_" + filetime + '.csv','wb')
+    e = open("errors_" + args.f + "_" + filetime + '.csv','wb')
     crawlFolders(args.d)
     f.close()
     e.close
