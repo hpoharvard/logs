@@ -19,11 +19,12 @@ The script accepts two arguments. The -d argument allow to specify the path, whi
 	* pywin32 (https://anaconda.org/anaconda/pywin32 - conda install -c anaconda pywin32)
 	* args (https://anaconda.org/conda-forge/args - conda install -c conda-forge args)
 	* activate pirc env (activate pirc)
+
 Steps to run the script:
-	1. Open Anaconda Prompt (Start >> Anaconda Prompt)
-	2. Type >> activate pirc
-	3. Change to the script directory >> cd C:\Temp
-	4. Type >> python crawl_adobe.py -d C:\Temp –f demo
+1. Open Anaconda Prompt (Start >> Anaconda Prompt)
+2. Type >> activate pirc
+3. Change to the script directory >> cd C:\Temp
+4. Type >> python crawl_adobe.py -d C:\Temp –f demo
 
 
 
