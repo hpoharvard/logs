@@ -41,7 +41,8 @@ def makePDF(path, filename):
         del avdoc
     except:
         print ("could not convert pdf")
-        createLOGerror(src + "\n")
+        createLOGerror(src + "\n")        
+        
 # create a new list that contains only unique files 
 def uniqueFiles(vlist, dirpath):
     vlist_noext = []            
@@ -55,8 +56,8 @@ def uniqueFiles(vlist, dirpath):
 def stripExt(vlist_new, vlist, dirpath):
     vlist_final = []
     for item in vlist_new:
-        for vitem in vlist:
-            if item == vitem.rsplit('.',1)[0] and (vitem.rsplit('.',1)[1] == 'tif' or vitem.rsplit('.',1)[1] == 'TIF' or vitem.rsplit('.',1)[1] == 'TIFF'):        
+        for vitem in vlist:            
+            if item == vitem.rsplit('.',1)[0] and (vitem.rsplit('.',1)[1] == 'tif' or vitem.rsplit('.',1)[1] == 'TIF'):
                 vlist_final.append(item)    
     vlist_final.sort()
     
@@ -76,11 +77,11 @@ def crawlFolders(rootpath):
         if len(filenames) > 1:
             vlist = filenames           
             # create a list of files with pdf, tif, or TIF extensions only 
-            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF' or x.split('.')[-1] == 'TIFF', vlist))                        
+            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF', vlist))                        
             uniqueFiles(vlist, dirpath)               
         else:
             vlist = filenames           
-            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF' or x.split('.')[-1] == 'TIFF', vlist))                        
+            vlist = list(filter(lambda x: x.split('.')[-1] == 'pdf' or x.split('.')[-1] == 'tif' or x.split('.')[-1] == 'TIF', vlist))                        
             uniqueFiles(vlist, dirpath)            
 
 if __name__ == '__main__':
